@@ -150,14 +150,14 @@
           </div>
         </footer>
         <script>
-          console.log(window.matchMedia('screen and(max-width:767px)'));
+          const ipad = window.matchMedia('screen and (max-width:767px)');
           const menu = document.querySelector('.menu');
           const burgerButton = document.querySelector('#burguer-menu');
 
           //funcion para agregar eventos
-          ipad.addEventListener(validation)
+          ipad.addListener(validation)
 
-          function validation(){
+          function validation(event){
             if (event.matches){
               burgerButton.addEventListener('click', hideShow)
             }
