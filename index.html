@@ -150,10 +150,23 @@
           </div>
         </footer>
         <script>
-          window.matchMedia('screen and()')
+          console.log(window.matchMedia('screen and(max-width:767px)'));
           const menu = document.querySelector('.menu');
           const burgerButton = document.querySelector('#burguer-menu');
-          burgerButton.addEventListener('click',hideShow)
+
+          //funcion para agregar eventos
+          ipad.addEventListener(validation)
+
+          function validation(){
+            if (event.matches){
+              burgerButton.addEventListener('click', hideShow)
+            }
+            else{
+              burgerButton.removeEventListener('click', hideShow)
+            }
+          }
+
+          //funcion mostrar y ocultar menuburger
           function hideShow(){
             if(menu.classList.contains('is-active')){
                 menu.classList.remove('is-active');
